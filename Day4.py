@@ -142,3 +142,24 @@ print(keyword.kwlist)
 # ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue',
 # 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in',
 # 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+# 2.12.1 Example 1: Multiplication and Addition
+result1 = 5 + 3 * 2  # Multiplication first: 5 + 6
+print(f"5 + 3 * 2 = {result1}")
+
+# Example 2: Parentheses and Division
+result2 = (10 - 4) / 2  # Parentheses first: 6 / 2
+print(f"(10 - 4) / 2 = {result2}")
+
+# Example 3: Exponents and Subtraction
+result3 = 2 ** 3 - 1  # Exponent first: 8 - 1
+print(f"2 ** 3 - 1 = {result3}")
+
+# Example 4: Mixed Operations
+result4 = 10 + 2 * (8 - 5) ** 2  # Parentheses, Exponent, Multiplication, Addition
+print(f"10 + 2 * (8 - 5) ** 2 = {result4}")
+
+# 2.13 value reassignment
+items = [1, 2, 3]
+items += [4, 5] # items = [1,2,3] + [4,5]
+print(items)

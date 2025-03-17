@@ -182,3 +182,65 @@ Using good variable names is a sign of good coding practice and professionalism.
 
 
 ### 2.10 Statement and Expressions
+
+**Expressions:**
+- An expression is a combination of values, variables, operators, and function calls that evaluates to a single value.
+- Expressions produce a result.
+- Examples:
+```python
+    # 42 + 2 #(evaluates to 44)
+    # x #(evaluates to the value of x)
+    #len("hello")# (evaluates to 5)
+    # x > 0 #(evaluates to True or False)
+```
+**Statements:**
+- A statement is a complete instruction that performs an action.
+- Statements do not necessarily produce a value. They perform operations or control the flow of the program.
+- Examples: 
+```python
+   # x = 5 + 3 (assignment statement)
+   # print(x) (print statement)
+   # if x > 0: ... (conditional statement)
+    #for i in range(10): ... (loop statement)
+    #def my_function(): ...(function defination)
+```
+
+**Key Differences:**
+- Expressions evaluate to a value, while statements perform an action.
+- Expressions can be part of statements, but statements are not part of expressions.
+
+```python
+x = 5 + 3
+print(x)
+```
+- 5+3:
+This is an **expression**. It evaluates to the value 8.
+- x = 5 + 3:
+This is a **statement**. It's an assignment statement that assigns the result of the expression 5 + 3 to the variable x.
+- x:
+Within the print statement, x is an **expression**, that evaluates to the value that is stored within the x variable.
+- print(x):
+This is a **statement**. It's a print statement that displays the value of the variable x to the console.
+
+### 2.11 Order of Operations
+
+**PEMDAS**
+- Also called BODMAS is an acronym that helps remember the order of operations in mathematical expressions. It dictates the sequence in which calculations should be performed to ensure consistent and correct results.
+
+**In simpler terms:**
+- Do what's in the parentheses first.
+- Then, calculate exponents.
+- Then, do multiplication and division (from left to right).
+- Finally, do addition and subtraction (from left to right).
+
+### 2.12 Reassignment
+
+#### Developing Your Mental Model of How Python Evaluates
+
+```python
+items = [1, 2, 3]
+print(items)
+items = ["apple", "banana", "cherry"]
+print(items)
+```
+
