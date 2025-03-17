@@ -35,11 +35,9 @@ _If you are not sure what type a value has, use the type function to find out._
 - Comparison operators compare two values/variables and return a boolean result: True or False. 
 -  The comparison operators also called relational operators. 
 - Some of the well known operators are "<" stands for less than, and ">" stands for greater than operator.
-- ```python
-    <	Less than	                a<b
-    >	Greater than	                a>b
-    <=	Less than or equal to	        a<=b
-    >=	Greater than or equal to	a>=b
-    ==	Is equal to	                a==b
-    !=	Is not equal to	                a!=b
-```
+- operators :==, !=, >=, <=, <, >.
+
+3. **Logical Operators**:
+- Python logical operators are used to combine conditional statements, allowing you to perform operations based on multiple conditions.
+- These Python operators, alongside arithmetic operators, are special symbols used to carry out computations on values and variables.
+- Operators : and, or, not.

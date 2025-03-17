@@ -29,3 +29,14 @@ print ('Modulo: ', a % b)
 
 # a to the power b
 print ('Power: ', a ** b)
+
+# 2.3.3 Logical operators
+# logical AND
+print(True and True)     # True
+print(True and False)    # False
+
+# logical OR
+print(True or False)     # True
+
+# logical NOT
+print(not True)          # False
