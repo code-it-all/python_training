@@ -1,4 +1,4 @@
-#2.2 Write a program that: Assigns different values to variables. Prints the type of each variable.
+#2.2 Write a program that: Assigns different values to variables. Prints the type of each variable. also defines the datatypes in 2.5
 val1 = 45
 val2 = 45.67
 val3 = "Hello"
@@ -83,3 +83,20 @@ list1 = [1,2,3]
 list2 = [4,5,6]
 combined_length = len(list1) + len(list2) # using len() multiple times in one expression.
 print(combined_length)
+
+# 2.4.2 functions are objects
+
+def say_something(message):
+  return message
+
+message_function = say_something
+output = message_function("This is a message.")
+print(output)
+
+def uppercase_string(input_string):
+    return input_string.upper()
+
+upper_func = uppercase_string
+upper_letter = upper_func("hello")
+print(upper_letter)
+

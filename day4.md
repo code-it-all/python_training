@@ -44,7 +44,7 @@ _If you are not sure what type a value has, use the type function to find out._
 
 
 ### 2.4 Function Calls
-**Function calls as part of complex expression**
+**2.4.1 Function calls as part of complex expression**
 
 _How it Works:_
 
@@ -61,6 +61,37 @@ _Examples_:
 - - Control Flow:
 if len(my_list) > 0: ...: The len() function's return value is used in a conditional statement.
 
+**2.4.2. Functions are Objects:  Parentheses Invoke Functions**
+- In Python, functions are treated as first-class objects, meaning they can be manipulated like any other data type (integers, strings, etc.). This has two key implications:
+
+- Functions are Objects:
+- - This means you can assign functions to variables, store them in data structures (like lists or dictionaries), and pass them as arguments to other functions.
+Essentially, a function's name acts as a reference to the function object in memory.
+- Parentheses Invoke Functions:
+- - When you place parentheses () after a function's name (or a variable that references a function), you are telling Python to execute the code within that function.
+If the function requires arguments, you place those arguments inside the parentheses.
+
+### 2.5 Data Types
+**Dynamic Typing Defined:**
+- Python is a dynamically typed language. This means that the type of a variable is checked during runtime, as opposed to compile-time (like in statically typed languages such as C++ or Java).
+You don't need to explicitly declare the data type of a variable before assigning a value to it.
+
+**How it Works:**
+- When you assign a value to a variable, Python automatically infers the data type based on the value itself.
+- The same variable can hold values of different types at different points in the program. This flexibility is a key characteristic of dynamic typing.
+
+**Advantages:**
+
+- Flexibility: Dynamic typing allows for more flexible and concise code, as you don't need to worry about type declarations.
+- Rapid Development: It can speed up development, as you can write code more quickly without the overhead of type checking.
+- Ease of Use: It makes Python easier to learn and use, especially for beginners.
+
+**Disadvantages:**
+- Runtime Errors: Type-related errors may not be caught until runtime, which can make debugging more challenging.
+- Performance: Dynamic typing can sometimes lead to slightly slower performance compared to statically typed languages, as type checking occurs during execution.
+- Readability/Maintainability: In very large codebases, it can be harder to keep track of variable types, which can affect readability and maintainability.
+- Type Checking Tools:
+To mitigate the potential disadvantages, Python offers tools like mypy for optional static type checking. This allows you to add type annotations to your code and catch type errors before runtime.
 
 ### 2.6 Type Conversion Functions 
 **int():**
@@ -88,4 +119,4 @@ Floating-point numbers (e.g., str(3.14)), Lists, tuples, dictionaries, and other
  
 This is very useful for printing values, concatenating strings, and other tasks that require string representations of data.
 
-### Variables
+### 2.7 Variables
