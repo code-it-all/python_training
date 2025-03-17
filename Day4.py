@@ -66,11 +66,6 @@ int_to_float = float(5)
 print(int_to_float, type(int_to_float))
 
 # Function calls as part of complex expression
-numbers = [5, 3, 8, 1]
-print(max(numbers) - min(numbers))
-
-# More examples:
-
 x = 10
 y = 3
 result = float(x / y)  # Combining division and type conversion
