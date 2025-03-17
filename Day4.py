@@ -100,3 +100,45 @@ upper_func = uppercase_string
 upper_letter = upper_func("hello")
 print(upper_letter)
 
+# 2.7 Variables
+# Integer example (immutable)
+x = 10
+print("x:", x, "id(x):", id(x)) #x: 10 id(x): 140710373164232
+
+# String example (immutable)
+name = "Alice"
+print("name:", name, "id(name):", id(name))   #name: Alice id(name): 1837710473712
+
+# List example (mutable)
+my_list = [1, 2, 3]
+print("my_list:", my_list, "id(my_list):", id(my_list))  #my_list: [1, 2, 3] id(my_list): 1837710175104
+
+#Dictionary example (mutable)
+my_dict = {"a":1, "b":2}
+print("my_dict:", my_dict, "id(my_dict):", id(my_dict))     #my_dict: {'a': 1, 'b': 2} id(my_dict): 1837710172160
+
+# 2.8 variable names and keywords
+
+# Exercise: Using reserved keywords as variable names
+
+# Attempting to use 'if' as a variable name:
+# if = 10  # This will result in a SyntaxError
+
+# Attempting to use 'for' as a variable name:
+# for = "hello"  # This will also result in a SyntaxError
+
+# Attempting to use 'while' as a variable name:
+# while = True # SyntaxError
+
+# Attempting to use 'True' as a variable name
+# True = "test" # SyntaxError
+
+# Fun Fact: Listing reserved keywords
+
+import keyword
+print(keyword.kwlist)
+
+# The below list will be printed
+# ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue',
+# 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in',
+# 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']

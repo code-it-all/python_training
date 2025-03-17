@@ -120,3 +120,65 @@ Floating-point numbers (e.g., str(3.14)), Lists, tuples, dictionaries, and other
 This is very useful for printing values, concatenating strings, and other tasks that require string representations of data.
 
 ### 2.7 Variables
+**Objects in Memory:**
+- In Python, everything is an object. This means that data, like integers, strings, lists, and functions, are all stored as objects in memory.
+- Each object has:
+A type (e.g., integer, string).
+A value.
+An identity (a unique memory address).
+**Variable as References:**
+- Variables in Python are not like boxes that hold values. Instead, they are more like labels or references that point to objects in memory.
+- When you assign a value to a variable, you're essentially creating a reference from that variable to the object that represents that value.
+
+**Memory Management:**
+- Python uses automatic memory management, which includes:
+- - Reference Counting: Python keeps track of how many references point to each object. When an object's reference count drops to zero, it means that no variables are pointing to it anymore.
+- - Garbage Collection: Python also has a garbage collector that identifies and reclaims memory occupied by objects that are no longer in use, even if reference counts aren't zero (to handle circular references).
+
+**Mutable vs. Immutable Objects:**
+- Objects can be either mutable (changeable) or immutable (unchangeable).
+- Immutable: Integers, floats, strings, and tuples are immutable. When you "change" an immutable object, you're actually creating a new object in memory.
+- Mutable: Lists, dictionaries, and sets are mutable. You can change their values directly without creating new objects.
+
+### 2.9 Choosing the right variable name
+
+**Original**
+```python
+    l = [1, 5, 2, 8]
+    m = max(l)
+    n = min(l)
+    print(m - n)
+```
+
+**Modified**
+```python
+    numbers = [1, 5, 2, 8]
+    maximum_value = max(numbers)
+    minimum_value = min(numbers)
+    print(maximum_value - minimum_value)
+```
+
+**Why is total_price a better name than tp?**
+
+**Clarity and Readability:**
+- total_price clearly conveys the variable's purpose. Anyone reading the code can immediately understand that it represents the total cost of something.
+tp is ambiguous. It could mean "total points," "test parameter," or any number of other things. This lack of clarity makes the code harder to understand.
+
+**Maintainability:**
+- When you or another developer revisits the code later, meaningful variable names make it much easier to understand the code's logic.
+- With tp, you would have to spend time figuring out what it represents, especially in larger, more complex programs.
+
+**Reduced Errors:**
+- Meaningful names reduce the chances of errors. When variables have clear purposes, you're less likely to use them incorrectly.
+
+**Collaboration:**
+- If you're working on a team, using descriptive variable names is essential for effective collaboration. It ensures that everyone understands the code and can work together efficiently.
+
+**Self-Documenting Code:**
+Well-chosen variable names can make code self-documenting. This means that the code itself explains its purpose, reducing the need for extensive comments.
+
+**Professionalism:**
+Using good variable names is a sign of good coding practice and professionalism.
+
+
+### 2.10 Statement and Expressions
