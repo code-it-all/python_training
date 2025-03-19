@@ -106,3 +106,62 @@ Importing within functions or methods.
 - Purpose: Allowing a single namespace to be split across multiple directories or distribution packages.
 - Techniques: Using implicit or explicit namespace packages. 
 - Benefits: Decoupled code organization, easier distribution of large projects.
+
+**7.Investigate sys.path**
+Important thing to remember
+
+- Persistent Changes: Adding a directory to sys.path using append() only affects the current Python session. If you want 
+- the change to be persistent, you can:
+Set the PYTHONPATH environment variable.
+Create a .pth file in one of the directories listed in sys.path.
+- Module Naming: Make sure your module files have the .py extension.
+- Security: Be cautious about adding arbitrary directories to sys.path, as it could potentially introduce security vulnerabilities.
+- Package vs. Module: If your custom directory contains multiple modules and subdirectories, consider structuring it as a Python package.
+
+
+**9.Import Side Effects**
+
+Import side effects refer to actions that occur when a Python module is imported, beyond simply defining functions, classes, and variables. 
+These actions can have unintended consequences, especially in testing or when modules have complex dependencies.
+
+_Types of Import Side Effects:_
+
+- Executing Top-Level Code:
+Any code that's not within a function or class definition is executed immediately when the module is imported. This can include:
+Printing to the console.
+Modifying global variables.
+Opening files or network connections.
+Interacting with external systems.
+- Modifying Global State:
+Modules can change the state of the Python interpreter or other modules. This can lead to unexpected behavior if multiple 
+modules rely on the same global state.
+- Starting Threads or Processes:
+Some modules might start background threads or processes during import. This can be problematic if you don't expect these background activities.
+- Connecting to Databases or Networks:
+Modules that interact with external services might establish connections during import. This can slow down import times and create dependencies that are difficult to manage.
+- Registering Callbacks or Event Handlers:
+Modules can register themselves to receive notifications or events from other parts of the system.
+
+_Why Import Side Effects Are Problematic:_
+
+- Testing:
+Import side effects can make unit testing difficult. If a module performs actions that affect external systems, it can be challenging to isolate the module's behavior.
+They can also make tests non-deterministic.
+- Performance:
+Importing modules with heavy side effects can slow down application startup times.
+- Dependency Management:
+Hidden dependencies created by import side effects can make it difficult to understand the relationships between modules.
+- Unexpected Behavior:
+Side effects can lead to unexpected behavior if you're not aware of them. For instance, a module that modifies global state might affect other modules in unforeseen ways.
+- Reproducibility:
+If a module connects to an external resource, and that resource is unavailable, then the module will behave differently, making reproducibility difficult.
+
+
+_How to Mitigate Import Side Effects:_
+
+- Encapsulate Side Effects:
+Move side effects into functions or classes that are called explicitly. This allows you to control when and how they occur.
+- Lazy Initialization:
+Delay the execution of side effects until they are actually needed.
+- Use if __name__ == '__main__'::
+Place code that should only be executed when the module is run as a script within an if __name__ == '__main__': block.

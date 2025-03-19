@@ -45,16 +45,55 @@
 
 # 5 measuring the import time of a module
 
-import time
-start_time = time.time()
-from random import randint
-end = time.time()
-print(f"single module import time: {end - start_time} seconds")
+# import time
+# start_time = time.time()
+# from random import randint
+# end = time.time()
+# print(f"single module import time: {end - start_time} seconds")
+#
+# start_time = time.time()
+# import random
+# end = time.time()
+# print(f"package import time: {end - start_time} seconds")
+#
+# 6. for testing the custome module
+# import test
 
-start_time = time.time()
-import random
-end = time.time()
-print(f"package import time: {end - start_time} seconds")
 
-import test
+# 7. investigating the custom path
+
+import sys
+sys.path.append('/custom/path/to/modules')
+print(sys.path)
+
+# 8. Mocking modules for testing
+import unittest
+from unittest import mock
+
+def calculate_square_root(x):
+    import math
+    return math.sqrt(x)
+
+class TestSquareRoot(unittest.TestCase):
+    def test_mock_sqrt(self):
+        with mock.patch('math.sqrt', return_value=100) as mock_sqrt:
+            result = calculate_square_root(25)
+            self.assertEqual(result, 100)
+            mock_sqrt.assert_called_once_with(25)
+
+if __name__ == '__main__':
+    unittest.main(argv=['first-arg-is-ignored'], exit=False)
+
+# Problematic module with import side effect
+print("Module loaded!")  # Side effect
+
+# Better module without import side effect
+def my_function():
+    return "Hello"
+
+def initialize_module():
+    print("Module initialized!") #side effect is now called explicitly.
+
+if __name__ == '__main__':
+    initialize_module()
 
