@@ -84,6 +84,8 @@ class TestSquareRoot(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)
 
+
+# 9.
 # Problematic module with import side effect
 print("Module loaded!")  # Side effect
 
@@ -97,3 +99,27 @@ def initialize_module():
 if __name__ == '__main__':
     initialize_module()
 
+# 10.
+import sys
+import importlib
+
+# Create a dummy module (for demonstration)
+with open("test_module.py", "w") as f:
+    f.write("value = 1\n")
+
+import test_module
+
+print(sys.modules['test_module'])  # Show the imported module
+
+# Modify the module
+with open("test_module.py", "w") as f:
+    f.write("value = 2\n")
+
+importlib.reload(test_module)  # Reload the module
+
+print(test_module.value)  # Show the updated value
+
+#cleanup
+del sys.modules['test_module']
+import os
+os.remove("test_module.py")
