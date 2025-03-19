@@ -55,3 +55,6 @@ start_time = time.time()
 import random
 end = time.time()
 print(f"package import time: {end - start_time} seconds")
+
+import test
+

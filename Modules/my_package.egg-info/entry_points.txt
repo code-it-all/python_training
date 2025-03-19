@@ -1,0 +1,2 @@
+[console_scripts]
+my_module = my_module.cli:main
