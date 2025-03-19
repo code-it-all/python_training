@@ -9,7 +9,8 @@
 
 # solution code we will use lazy import i.e. import when you need.
 def func_a():
-    return "Function A"
+    print("Function A")
+    return
 
 def use_func_b():
     import module_b  # Import inside the function which delays the import

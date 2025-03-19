@@ -7,8 +7,8 @@
 
 # possible solution code:
 def func_b():
-    return "Function B"
-
+    print("Function B")
+    return
 if __name__ == "__main__":
     import module_a # to prevent a circular import when running module b directly.
     print(module_a.func_a())
