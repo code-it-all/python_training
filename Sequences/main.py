@@ -119,3 +119,49 @@ from operator import index
 # list_of_tuples = [(1, 2), (3, 1), (5, 9), (7, 8)]
 # print(sort_tuples(list_of_tuples))
 
+# Q22. Implement a program to flatten a nested list of arbitary depth list comprehention used
+# list_to_flatten = [[1, 2, 26], [3, 4, 8,43], [5, 6], [78]]
+# result = [i for x in list_to_flatten for i in x]
+# print(result)
+
+# Q23 Create a function that rotates a list to right by k times
+# list_to_rotate = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# def rotation(k, list_rotate):
+#     new_list = list_rotate[:]
+#     for _ in range(k):
+#         element = new_list.pop()
+#         new_list.insert(0, element)
+#     return new_list
+#
+# print(rotation(3, list_to_rotate))
+# alternative method below
+# def rotations(k, list_rotate):
+#     k = k%len(list_rotate)
+#     return list_rotate[-k:] + list_rotate[:-k]
+# print(rotations(3, list_to_rotate))
+
+# Q24. Given two strings, WAF that returns True if they are anagrams
+# str1 = "silent"
+# str2 = "listen"
+# def anagram(str1, str2):
+#     return sorted(str1) == sorted(str2)
+#
+# print(anagram(str1, str2))
+#
+# # Q25. Create a function to split list into chunks of specified size
+# list_to_split = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# size_of_chunk = 3
+#
+# for i in range(0, len(list_to_split), size_of_chunk):
+#     print(list_to_split[i:i+size_of_chunk])
+
+# Q26 Implement a function that merges two sorted lists into one sorted list
+def merge_sorted_lists(list1, list2):
+    # return sorted(list1 + list2)
+    list1.extend(list2)
+    # print(list1)
+    return sorted(list1)
+
+list1 = [1, 31, 5, 700]
+list2 = [26, 4, 63, 819]
+print(merge_sorted_lists(list1, list2))
