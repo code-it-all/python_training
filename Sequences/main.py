@@ -155,13 +155,16 @@ from operator import index
 # for i in range(0, len(list_to_split), size_of_chunk):
 #     print(list_to_split[i:i+size_of_chunk])
 
-# Q26 Implement a function that merges two sorted lists into one sorted list
-def merge_sorted_lists(list1, list2):
-    # return sorted(list1 + list2)
-    list1.extend(list2)
-    # print(list1)
-    return sorted(list1)
+# # Q26 Implement a function that merges two sorted lists into one sorted list
+# def merge_sorted_lists(list1, list2):
+#     # return sorted(list1 + list2)
+#     list1.extend(list2)
+#     # print(list1)
+#     return sorted(list1)
+#
+# list1 = [1, 31, 5, 700]
+# list2 = [26, 4, 63, 819]
+# print(merge_sorted_lists(list1, list2))
 
-list1 = [1, 31, 5, 700]
-list2 = [26, 4, 63, 819]
-print(merge_sorted_lists(list1, list2))
+
+import researchQuestions
