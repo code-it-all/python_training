@@ -68,52 +68,138 @@ from pyexpat.errors import messages
 # new_list[3] = other_list[2] + other_list[3] + " "+ other_list[0] + other_list[1] + 'r'
 #
 # print(''.join(new_list))
+#
+# inventory = [
+#     ("Apples", 50),
+#     ("Bananas", 100),
+#     ("Oranges", 70),
+# ]
+#
+# maximum_item = max(inventory, key = lambda x: x[1])
+# print(maximum_item[0])
+#
+# survey_data = "5,7,2,6,9,1,45"
+# survey_data_int = list(map(int, survey_data.split(",")))
+# max_value = max(survey_data_int)
+# min_value = min(survey_data_int)
+# print(f"Max Score : {max_value} Min Score : {min_value}")
+# print()
+# # print(survey_data_int)
+#
+# user = ['Alice' ,'Bob' ,'Charlie']
+# roles = ('admin' ,'user' ,'guest')
+#
+# access_roles = {}
+# for i,j in zip(user,roles):    #zip function allows to combine multiple iterables into iterator of tuples
+#     access_roles[i] = j
+#
+# print(access_roles)
+#
+# messages = "My account is locked, please help!"
+# category = "low"
+# if len(messages) > 5:
+#     category = "medium"
+# elif len(messages) > 10:
+#     category = "high"
+#
+# print(category)
+#
+# # find the product with longest word length
+# products = ["Laptop", "Smartphone", "TV", "Wireless Headphones"]
+# longest_product = max(products, key=len)
+# print(longest_product)
+#
+# # extract last 10 readings and find the average
+# sensor_readings = [12, 15, 14, 16, 20, 22, 21, 23, 25, 30, 28, 27]
+# sum = 0
+# # print(len(sensor_readings))
+# sensor_readings = sensor_readings[-10:]
+# for i in sensor_readings:
+#     sum+= i
+# print("Average is : ", sum/10)
+#
+# # reverse the given list
+# transactions = [50, -150, 200, -300, 100]
+# print("Reverse of Transactions : ", transactions[::-1])
+#
+# # Format logs with timestamps
+# logs = ["System Boot", "Network Connected", "User Login"]
+# timestamps = ["08:00:01", "08:00:05", "08:00:09"]
+# formated_data = []
+# for i,j in zip(logs,timestamps):
+#     formated_data.append(f"{j} : {i}")
+# print(formated_data)
+#
+# # pattern generator
+# symbol = "* "
+# count = 5
+# print(symbol*count)
+#
+# # count the occurence of target keyword
+# text = "The product is excellent, absolutely excellent!"
+# target = "excellent"
+# count = text.count(target)
+# print(f"'{target}' count : {count}")
+#
+#
+# # find the index of first occurence of target word
+# log = "INFO: All system go. ERROR: Failed to start service."
+# target = "ERROR"
+# index = log.find(target)
+# print(f"'{target}' index : {index}")
+#
+#
+# # parse csv into list
+# csv_data = "Alice,25,Engineer\nBob,30,Doctor\nCharlie,22,Artist"
+# csv_data = csv_data.split("\n")
+# csv_data = [data.split(',') for data in csv_data ]
+# print(csv_data)
+#
+# # username generator generate usernames form full names
+# names = ["Alice Wonderland", "Bob Builder", "Charlie Chaplin"]
+# surnames = []
+# first_name = []
+# for name in names:
+#     first_name.append(name.split()[0][0])
+# for name in names:
+#     surnames.append(name.split()[1])
+# user_name = []
+# for i,j in zip(first_name,surnames):
+#     user_name.append(i+j)
+# print(user_name)
 
-inventory = [
-    ("Apples", 50),
-    ("Bananas", 100),
-    ("Oranges", 70),
+# count messages per user from chat logs
+chat_logs = [
+    "Alice: Hi!",
+    "Bob: Hello!",
+    "Alice: How are you?",
+    "Bob: I’m good, thanks!"
 ]
 
-maximum_item = max(inventory, key = lambda x: x[1])
-print(maximum_item[0])
+user_messages = {}
+for log in chat_logs:
+    user, message = log.split(": ")
+    if user not in user_messages:
+        user_messages[user] = 1
+    else:
+        user_messages[user] += 1
+print(user_messages)
+result = ", ".join(f"{user} : {count} messages" for user, count in user_messages.items())
 
-survey_data = "5,7,2,6,9,1,45"
-survey_data_int = list(map(int, survey_data.split(",")))
-max_value = max(survey_data_int)
-min_value = min(survey_data_int)
-print(f"Max Score : {max_value} Min Score : {min_value}")
-print()
-# print(survey_data_int)
+# compress recurring substrings
+data_to_compress = "ababababababab"
 
-user = ['Alice' ,'Bob' ,'Charlie']
-roles = ('admin' ,'user' ,'guest')
+def compress_repeating_substring(data):
+    for size in range(1, len(data)):
+        if data == data[:size] * (len(data) // size):
+            return f"'{data[:size]}' repeated {len(data) // size} times"
+    return "No repeating pattern found"
 
-access_roles = {}
-for i,j in zip(user,roles):    #zip function allows to combine multiple iterables into iterator of tuples
-    access_roles[i] = j
+# Example input
 
-print(access_roles)
+print(compress_repeating_substring(data_to_compress))
 
-messages = "My account is locked, please help!"
-category = "low"
-if len(messages) > 5:
-    category = "medium"
-elif len(messages) > 10:
-    category = "high"
-
-print(category)
-
-# find the product with longest word length
-products = ["Laptop", "Smartphone", "TV", "Wireless Headphones"]
-longest_product = max(products, key=len)
-print(longest_product)
-
-# extract last 10 readings and find the average
-sensor_readings = [12, 15, 14, 16, 20, 22, 21, 23, 25, 30, 28, 27]
-sum = 0
-# print(len(sensor_readings))
-sensor_readings = sensor_readings[-10:]
-for i in sensor_readings:
-    sum+= i
-print("Average is : ", sum/10)
+# explaining line 194
+# data [:size] will extract the first size characters of data which is a candidate repeating pattern.
+# len(data) // size will calculate how many times the substring should repeat to match the given data
+# data[:size] * (len(data) // size) will repeat the extracted string (len(dta // size) times , if this recontructed string matches the data, we found the repeating patter.
