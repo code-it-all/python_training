@@ -1,2 +1,2 @@
 ﻿# Tech Mahindra 
-This repo include Day4 task for python training
+This repo include solutions for the tasks given during python training.
