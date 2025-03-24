@@ -19,8 +19,6 @@ print("Longest pipeline : ", long_pipeline)
 print("List of pipelines exceeding threshold : ", exceding_pipeline)
 
 
-from pyexpat.errors import messages
-
 import re
 #
 logs = """ ERROR 404: Not Found
