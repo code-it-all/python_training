@@ -1,71 +1,75 @@
 # pipelines in python
 # Finding the longest pipeline and return maximum threshold time
 # Given pipeline
-# pipelines = [
-#     ("Data Ingestion", 30),
-#     ("preprocessing", 45),
-#     ("Model Training", 120),
-#     ("Evaluation", 20),
-# ]
-# threshold = 40
-#
+pipelines = [
+    ("Data Ingestion", 30),
+    ("preprocessing", 45),
+    ("Model Training", 120),
+    ("Evaluation", 20),
+]
+threshold = 40
+
 # # to find the longest pipeline we are using the time given with the corresponding pipelines above
-# long_pipeline = max(pipelines, key=lambda x: x[1])   # the lambda function will access the time of pipelines
+long_pipeline = max(pipelines, key=lambda x: x[1])   # the lambda function will access the time of pipelines
+
+# identify the pipeline which are exceding the threshold value given with corresponding pipelines
+exceding_pipeline = [pipeline for pipeline in pipelines if pipeline[1] > threshold]
 #
-# # identify the pipeline which are exceding the threshold value given with corresponding pipelines
-# exceding_pipeline = [pipeline for pipeline in pipelines if pipeline[1] > threshold]
-#
-# print("Longest pipeline : ", long_pipeline)
-# print("List of pipelines exceeding threshold : ", exceding_pipeline)
+print("Longest pipeline : ", long_pipeline)
+print("List of pipelines exceeding threshold : ", exceding_pipeline)
+
+
 from pyexpat.errors import messages
 
-# import re
+import re
 #
-# logs = """ ERROR 404: Not Found
+logs = """ ERROR 404: Not Found
 # INFO: Connection established
 # ERROR 500: Internal Server Error
 # ERROR 404: Not found"""
 #
-# pattern = r"ERROR (\d+)"  #using regex where \d matches any digit, + matches one or more digits and () capturing group that extracts the numeric value
-#
-# error_codes = set(re.findall(pattern, logs))
+pattern = r"ERROR (\d+)"
+#using regex where \d matches any digit, + matches one or more digits and () capturing group that extracts the numeric
+# value
+
+error_codes = set(re.findall(pattern, logs))
 # #re.findall() will scan the text and extracts only the error codes form matching log entries
 # # since we use (\d+) as capturing group only numbers are returned.
 # # set() returns unique values
-# print(error_codes)
+print(error_codes)
 #
-# config_string = """ host=localhost
+config_string = """ host=localhost
 # port = 5432
 # username=user1
 # password=secret
 # debug=true"""
 #
-# config_dict = {}
-# for line in config_string.strip().split('\n'):
-#     if "=" in line:
-#         key, value = line.split("=")
-#         config_dict[key] = value
-#
-# print(config_dict)
+config_dict = {}
+for line in config_string.strip().split('\n'):
+    if "=" in line:
+        key, value = line.split("=")
+        config_dict[key] = value
+
+print(config_dict)
 
 # data cleaner to list all the hashtags used in a string
-# post = "Loving the new #python course! #coding #python #skills"
-# post = post.split()
-# hashtags = []
-# for word in post:
-#     if word.startswith("#"):
-#         hashtags.append(word)
+post = "Loving the new #python course! #coding #python #skills"
+post = post.split()
+hashtags = []
+for word in post:
+    if word.startswith("#"):
+        hashtags.append(word)
+
+print(set(hashtags))   #set() is used to extract the unique values only
 #
-# print(set(hashtags))   #set() is used to extract the unique values only
 #
+secret_message = "hweollrolwd"
 #
-# secret_message = "hweollrolwd"
-#
-# new_list = [secret_message[s] for s in range(0, len(secret_message), 2)]
-# print(new_list)
-# other_list = [secret_message[s] for s in range( len(secret_message)) if s%2 != 0]
-# print(other_list)
-# new_list[3] = other_list[2] + other_list[3] + " "+ other_list[0] + other_list[1] + 'r'
+new_list = [secret_message[s] for s in range(0, len(secret_message), 2)]
+print(new_list)
+other_list = [secret_message[s] for s in range( len(secret_message)) if s%2 != 0]
+print(other_list)
+new_list[3] = other_list[2] + other_list[3] + " "+ other_list[0] + other_list[1] + 'r'
 #
 # print(''.join(new_list))
 #
@@ -186,20 +190,21 @@ for log in chat_logs:
 print(user_messages)
 result = ", ".join(f"{user} : {count} messages" for user, count in user_messages.items())
 
-# compress recurring substrings
-data_to_compress = "ababababababab"
+# find the pattern from the given string and compress the data
+string_to_compress = "ababababmnmnmnmn"
+def pattern_in_string(string_pattern):
+    new_string = ""
+    count = 1
 
-def compress_repeating_substring(data):
-    for size in range(1, len(data)):
-        if data == data[:size] * (len(data) // size):
-            return f"'{data[:size]}' repeated {len(data) // size} times"
-    return "No repeating pattern found"
+    for i in range(len(string_pattern)):
+        if string_pattern[i] not in new_string:
+            new_string += string_pattern[i]
+            print(new_string)
+            count = 0
+        if string_pattern[i] == new_string[-1]:
+            count += 1
+    return new_string, count
 
-# Example input
 
-print(compress_repeating_substring(data_to_compress))
-
-# explaining line 194
-# data [:size] will extract the first size characters of data which is a candidate repeating pattern.
-# len(data) // size will calculate how many times the substring should repeat to match the given data
-# data[:size] * (len(data) // size) will repeat the extracted string (len(dta // size) times , if this recontructed string matches the data, we found the repeating patter.
+result, count = pattern_in_string(string_to_compress)
+print(f"Pattern : '{result}' repeated {count} times")
