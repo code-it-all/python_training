@@ -206,5 +206,5 @@ def pattern_in_string(string_pattern):
     return new_string, count
 
 
-result, count = pattern_in_string(string_to_compress)
-print(f"Pattern : '{result}' repeated {count} times")
+string_to_print, count = pattern_in_string(string_to_compress)
+print(f"Pattern : '{string_to_print}' repeated {count} times")
