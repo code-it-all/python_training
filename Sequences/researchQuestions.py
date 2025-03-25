@@ -68,7 +68,6 @@ print(new_list)
 other_list = [secret_message[s] for s in range( len(secret_message)) if s%2 != 0]
 print(other_list)
 new_list[3] = other_list[2] + other_list[3] + " "+ other_list[0] + other_list[1] + 'r'
-#
 # print(''.join(new_list))
 #
 # inventory = [
@@ -137,14 +136,14 @@ new_list[3] = other_list[2] + other_list[3] + " "+ other_list[0] + other_list[1]
 # count = 5
 # print(symbol*count)
 #
-# # count the occurence of target keyword
+# # count the occurrence of target keyword
 # text = "The product is excellent, absolutely excellent!"
 # target = "excellent"
 # count = text.count(target)
 # print(f"'{target}' count : {count}")
 #
 #
-# # find the index of first occurence of target word
+# # find the index of first occurrence of target word
 # log = "INFO: All system go. ERROR: Failed to start service."
 # target = "ERROR"
 # index = log.find(target)
