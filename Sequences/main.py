@@ -16,7 +16,7 @@
 # print(my_string[1])  # Output: y
 # print(my_string[-1]) # Output: n
 #
-# # Q4. to access last chracter of a string
+# # Q4. to access last character of a string
 # str1 = "Hello world!"
 # print(str1[-1])  # !
 #
@@ -34,7 +34,7 @@
 # print(a)
 # print(b)
 #
-# # list concetination
+# # list concatenation
 # str1 = "Hello "
 # str2 = "World!"
 # print(str1 + str2)   #Hello World!
