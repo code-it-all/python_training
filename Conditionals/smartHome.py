@@ -4,8 +4,7 @@ class SmartHome:
         self.fan_on = False
 
     def check_sensors(self, temperature, humidity, motion_detected):
-        # Check temperature
-        if temperature > 75:
+        if temperature > 30:
             self.turn_on_fan()
         else:
             self.turn_off_fan()

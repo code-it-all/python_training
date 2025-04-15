@@ -50,7 +50,7 @@ import smartHome
 
 smart_home = smartHome.SmartHome()
 try:
-    temperature = float(input("Enter the current temperature (°F): "))
+    temperature = float(input("Enter the current temperature (°C): "))
     humidity = float(input("Enter the current humidity (%): "))
     motion_detected = input("Is there motion detected? (yes/no): ").strip().lower() == 'yes'
 
