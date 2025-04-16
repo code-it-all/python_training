@@ -1,0 +1,4 @@
+[2025-04-16 08:44:35] ERROR: Failed to connect to the database. Check the connection settings.
+[2025-04-16 08:46:58] ERROR: Timeout while fetching data from API endpoint /v1/resource.
+[2025-04-16 08:48:03] ERROR: Unauthorized access attempt detected from IP: 192.168.0.102.
+[2025-04-16 08:50:47] ERROR: Unexpected null value encountered in the 'user_email' field.

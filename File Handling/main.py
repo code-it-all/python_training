@@ -56,4 +56,6 @@
 #     else:
 #         print("Invalid choice.")
 #
-import ExtraQuestions
+# import ExtraQuestions
+# import logfileAnalyser
+import wordCounts
