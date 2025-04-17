@@ -1,0 +1,6 @@
+   This is a line with leading spaces.
+    \tThis line starts with a tab.
+    Line with\t a tab in between words.
+      Another example of a line with spaces around.
+    \t\tLine with multiple tabs at the start.
+    A clean line without extra spaces or tabs.

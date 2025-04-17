@@ -1,0 +1,11 @@
+ProductID,ProductName,Price,Category
+2,Notebook,50,Stationery
+8,Water Bottle,199,Sports
+5,LED Light,299,Home Improvement
+3,Phone Case,399,Accessories
+9,Desk Lamp,599,Furniture
+1,Wireless Mouse,799,Electronics
+10,Backpack,1199,Travel
+7,Bluetooth Speaker,1999,Electronics
+4,Gaming Chair,14999,Furniture
+6,Smartphone,24999,Electronics
